@@ -100,11 +100,10 @@ where
 /** List of total cost (including tax and freight charge) for every order sorted by ship date */
 
 SELECT
-  p.ProductID,
-  p.ProductName, 
+  od.OrderID ,
   sum(
     (p.UnitPrice * od.Quantity) + (o.FreightCharge + o.Taxes)
-  ) 
+  ) TotalCost
 FROM 
   Order_Details od 
   inner join Products p ON p.ProductID = od.ProductID 
@@ -112,8 +111,24 @@ FROM
 where 
   o.ShipDate is not NULL 
 group by 
-  p.ProductID, p.ProductName
+  od.OrderID
 order by 
   o.ShipDate asc
 
 /** end */
+
+-- TODO
+SELECT
+  p.ProductID,
+  p.ProductName,
+  sum(
+    (p.UnitPrice * od.Quantity) + (o.FreightCharge + o.Taxes)
+  ) TotalCost
+FROM 
+  Order_Details od 
+  inner join Products p ON p.ProductID = od.ProductID 
+  inner join Orders o on o.OrderID = od.OrderID 
+where 
+  o.ShipDate is not NULL 
+group by 
+  p.ProductID, p.ProductName 

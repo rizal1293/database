@@ -3,11 +3,11 @@ package domain
 import "context"
 
 type Employee struct {
-	EmployeeID  int64
-	FirstName string
-	LastName    string
-	Title       string
-	WorkPhone   string
+	EmployeeID int64
+	FirstName  string
+	LastName   string
+	Title      string
+	WorkPhone  string
 }
 
 type EmployeeRepository interface {

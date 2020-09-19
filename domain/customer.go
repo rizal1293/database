@@ -3,7 +3,7 @@ package domain
 import "context"
 
 type Customer struct {
-	CustomerID          int64
+	CustomerID          int64 
 	CompanyName         string
 	FisrtName           string
 	LastName            string

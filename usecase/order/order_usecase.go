@@ -18,6 +18,7 @@ func NewOrderUsecase(r domain.OrderRepository, t time.Duration) domain.OrderUsec
 	}
 }
 
+
 func (s *orderUsecase) Save(ctx context.Context, o []*domain.Order) (err error) {
 	ctx, cancel := context.WithTimeout(ctx, s.timeout)
 	defer cancel()

@@ -3,10 +3,10 @@ package domain
 import "context"
 
 type Product struct {
-	ProductID int64
-	ProductName string
-	UntiPrice int
-	InStock   string
+	ProductID   int64  
+	ProductName string 
+	UntiPrice   int    
+	InStock     string 
 }
 
 type ProductRepository interface {
