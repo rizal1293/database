@@ -10,6 +10,7 @@ require (
 	github.com/sirupsen/logrus v1.6.0
 	github.com/stretchr/objx v0.3.0 // indirect
 	github.com/stretchr/testify v1.4.0
+	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
 	golang.org/x/tools v0.0.0-20200918232735-d647fc253266 // indirect
 	gopkg.in/DATA-DOG/go-sqlmock.v1 v1.3.0
 )

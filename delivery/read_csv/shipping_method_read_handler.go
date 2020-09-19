@@ -59,6 +59,8 @@ func (h *shippingMethodHandler) read() {
 	if err != nil {
 		log.Print(err.Error())
 	} else {
+		print("\n")
 		fmt.Print("Data Shipping Method has been Saved!")
+		print("\n")
 	}
 }

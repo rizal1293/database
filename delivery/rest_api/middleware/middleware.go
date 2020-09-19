@@ -3,6 +3,7 @@ package middleware
 import "github.com/labstack/echo"
 
 type GoMiddleware struct {
+	// do stuff
 }
 
 func (m *GoMiddleware) CORS(next echo.HandlerFunc) echo.HandlerFunc {
@@ -15,5 +16,3 @@ func (m *GoMiddleware) CORS(next echo.HandlerFunc) echo.HandlerFunc {
 func InitMiddleware() *GoMiddleware {
 	return &GoMiddleware{}
 }
-
-

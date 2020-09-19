@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"rest_api/domain"
 	"strings"
-
-	"github.com/sirupsen/logrus"
 )
 
 type orderRepository struct {

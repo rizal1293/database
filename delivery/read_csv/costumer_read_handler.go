@@ -75,6 +75,8 @@ func (h *customerReadHandler) read() {
 	if err != nil {
 		log.Print(err.Error())
 	} else {
+		print("\n")
 		fmt.Print("Data Customer has been Saved!")
+		print("\n")
 	}
 }

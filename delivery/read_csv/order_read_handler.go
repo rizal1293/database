@@ -85,6 +85,8 @@ func (h *orderReadHandler) read() {
 	if err != nil {
 		log.Print(err)
 	} else {
+		print("\n")
 		fmt.Print("Data Orders has been Saved!")
+		print("\n")
 	}
 }

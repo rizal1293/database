@@ -62,6 +62,8 @@ func (h *employeeReadHandler) read() {
 	if err != nil {
 		log.Print(err.Error())
 	} else {
+		print("\n")
 		fmt.Print("Data Employee has been Saved!")
+		print("\n")
 	}
 }

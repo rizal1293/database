@@ -75,6 +75,8 @@ func (h *orderDetailReadHandler) read() {
 	if err != nil {
 		log.Println(err)
 	} else {
+		print("\n")
 		fmt.Print("Data Order Detail has been Saved!")
+		print("\n")
 	}
 }
