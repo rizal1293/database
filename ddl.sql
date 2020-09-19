@@ -2,10 +2,10 @@ CREATE DATABASE `sales` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 
 -- sales.Costumer definition
 
-CREATE TABLE `Costumer` (
-  `CostumerID` bigint(20) NOT NULL,
+CREATE TABLE `Customer` (
+  `CustomerID` bigint(20) NOT NULL,
   `CompanyName` varchar(50) DEFAULT NULL,
-  `FisrtName` varchar(30) DEFAULT NULL,
+  `FirstName` varchar(30) DEFAULT NULL,
   `LastName` varchar(50) DEFAULT NULL,
   `BillingAddress` varchar(255) DEFAULT NULL,
   `City` varchar(50) DEFAULT NULL,
@@ -28,6 +28,7 @@ CREATE TABLE `Costumer` (
 CREATE TABLE `Employees` (
   `EmployeeID` bigint(20) NOT NULL,
   `FisrtName` varchar(50) DEFAULT NULL,
+  `LastName` varchar(50) DEFAULT NULL,
   `Title` varchar(50) DEFAULT NULL,
   `WorkPhone` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`EmployeeID`)
@@ -55,8 +56,8 @@ CREATE TABLE `Products` (
 
 CREATE TABLE `Orders` (
   `OrderID` bigint(20) NOT NULL,
-  `CostumerID` bigint(20) DEFAULT NULL,
-  `EmployeeID` bigint(50) DEFAULT NULL,
+  `CustomerID` bigint(20) DEFAULT NULL,
+  `EmployeeID` bigint(20) DEFAULT NULL,
   `OrderDate` date DEFAULT NULL,
   `PurchaseOrderNumber` varchar(30) DEFAULT NULL,
   `ShipDate` date DEFAULT NULL,
@@ -66,10 +67,10 @@ CREATE TABLE `Orders` (
   `PaymentReceived` char(1) DEFAULT NULL,
   `Comment` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`OrderID`),
-  KEY `CostumerID` (`CostumerID`),
+  KEY `CustomerID` (`CustomerID`),
   KEY `EmployeeID` (`EmployeeID`),
   KEY `ShippingMethodID` (`ShippingMethodID`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`CostumerID`) REFERENCES `Costumer` (`CostumerID`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `Customers` (`CustomerID`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`EmployeeID`) REFERENCES `Employees` (`EmployeeID`),
   CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`ShippingMethodID`) REFERENCES `Shipping_Methods` (`ShippingMethodID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
